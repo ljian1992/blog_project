@@ -13,3 +13,6 @@
 5. 用户，登陆，注册，注销， 评论
 6. admin后台管理
 
+## 效果图
+![image](https://github.com/ljian1992/blog_project/tree/master/images/效果图.png)
+
