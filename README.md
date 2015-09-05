@@ -14,5 +14,5 @@
 6. admin后台管理
 
 ## 效果图
-![image](https://github.com/ljian1992/blog_project/tree/master/images/效果图.png)
+![](https://github.com/ljian1992/blog_project/blob/master/images/%E6%95%88%E6%9E%9C%E5%9B%BE.png)
 
