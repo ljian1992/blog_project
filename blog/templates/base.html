@@ -1,0 +1,187 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ SITE_NAME }}</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href='{% static 'css/base.css' %}' rel="stylesheet">
+    <link href='{% static 'css/index.css' %}' rel="stylesheet">
+    {% block custom_css %}{% endblock %}
+
+    <script type="text/javascript" src='{% static 'js/jquery.min.js' %}'></script>
+    <script type="text/javascript" src='{% static  'js/sliders.js' %}'></script>
+    <!--[if lt IE 9]>
+<script src="{% static 'js/modernizr.js'%}  "></script>
+
+{% block custom_js %}{% endblock %}
+<![endif]-->
+</head>
+<body>
+<header>
+    <div class="wp">
+        <nav id="topnav" class="f_r">
+            <ul>
+                {% for category in category_list %}
+                    <a href="{% url 'category' %}?category_id={{ category.id }}" target="_blank">{{ category.name }}</a>
+                {% empty %}
+                    <a href="base.html" target="_blank">无
+                {% endfor %}
+
+            </ul>
+            <script src="js/nav.js"></script>
+        </nav>
+        <div class="logo">
+            <h1>{{ SITE_DESC }}</h1>
+        </div>
+    </div>
+
+
+</header>
+<article>
+    <div class="wp">
+         {% block letf_content %}
+        <div class="l_box f_l">
+        <div class="topnews">
+            {% block article_archive_title %}{% endblock %}
+            <ul>
+                {% for article in article_list %}
+                    <li>
+                        <div class="blogs">
+
+                            <h3><a href="{% url 'article' %}?id={{ article.id }}">{{ article.title }}</a></h3>
+                            <p>{{ article.desc }}</p>
+                            <p class="autor">
+                        <span class="lm f_l">
+                            <a href="/">{% for tag in article.tag.all %} {{ tag.name }}   {% endfor %}</a>
+                        </span>
+                                <span class="dtime f_l">{{ article.date_publish | date:'Y-m-d'}}</span>
+                                <span class="viewnum f_r">浏览（<a href="/">{{ article.click_count }}</a>）</span>
+                                <span class="pingl f_r">评论（<a href="/">{{ article.comment_set.all.count }}</a>）</span>
+                            </p>
+
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- 分页 -->
+        {% include 'pagination.html' %}
+    </div>
+    {% endblock %}
+
+    <div class="r_box f_r">
+    <!--
+        <div class="tit01">
+            <h3>关注我</h3>
+            <div class="gzwm">
+                <ul>
+                    <li><a class="xlwb" href="#" target="_blank">新浪微博</a></li>
+                    <li><a class="txwb" href="#" target="_blank">腾讯微博</a></li>
+                    <li><a class="wx" href="mailto:admin@admin.com">邮箱</a></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <!--tit01 end-->
+        <div class="moreSelect" id="lp_right_select">
+            <script>
+                window.onload = function ()
+                {
+                    var oLi = document.getElementById("tab").getElementsByTagName("li");
+                    var oUl = document.getElementById("ms-main").getElementsByTagName("div");
+
+                    for(var i = 0; i < oLi.length; i++)
+                    {
+                        oLi[i].index = i;
+                        oLi[i].onmouseover = function ()
+                        {
+                            for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+                            this.className = "cur";
+                            for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+                            oUl[this.index].style.display = "block"
+                        }
+                    }
+                }
+            </script>
+            <div class="ms-top">
+                <ul class="hd" id="tab">
+                    <li class="cur"><a href="/">浏览排行</a></li>
+                    <li><a href="/">评论排行</a></li>
+                </ul>
+            </div>
+            <div class="ms-main" id="ms-main">
+                <div style="display: block;" class="bd bd-news" >
+                    <ul>
+                        {% for browse_article in browse_article_list %}
+                            <li>
+                                <a href="{% url 'article' %}?id={{ browse_article.id }}" target="_blank">
+                                    {{ browse_article.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div  class="bd bd-news">
+                    <ul>
+                        {% for article_commnet in  article_comment_list%}
+                            <li>
+                                <a href="{% url 'article' %}?id={{ article_commnet.id }}" target="_blank">
+                                    {{ article_commnet.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <!--ms-main end -->
+        </div>
+        <!--切换卡 moreSelect end -->
+
+        <div class="cloud">
+            <h3>标签云</h3>
+            <ul>
+                {% for tag in tag_list %}
+                    <li><a href="{% url 'tag' %}?tag_id={{ tag.id }}">{{ tag.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="tuwen">
+            <h3>文章归档</h3>
+            <ul>
+                {% for archive in archive_list %}
+                    <li>
+                        <p>
+                          <span class="tutime font-size-18">
+                              <a href="{% url 'archive' %}?year={{ archive | slice:"0:4" }}&month={{ archive | slice:"5:7" }}">{{archive}}</a>
+                          </span>
+                        </p>
+                    </li>
+                {% empty %}
+                    <li>
+                        <p><span class="tutime font-size-18"><a href=''>没有文章归档</a></span></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="links">
+            <h3>友情链接</h3>
+            <ul>
+                {% for link in link_list %}
+                      <li><a href="{{ link.callback_url }}" target="_blank">{{ link.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </div>
+
+
+</article>
+<footer>
+    <p class="ft-copyright">{{ COPYRIGHT_INFO }}</p>
+    <div id="tbox"><a id="gotop" href="javascript:scroll(0, 0)"></a> </div>
+</footer>
+</body>
+</html>

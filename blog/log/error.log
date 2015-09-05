@@ -1,0 +1,34 @@
+
+2015-09-01 19:07:25,725 [Thread-17:31360] [blog.views:135] [views:do_reg] [ERROR]- '[password'
+2015-09-01 19:07:41,569 [Thread-19:26516] [blog.views:135] [views:do_reg] [ERROR]- '[password'
+2015-09-01 19:07:43,564 [Thread-20:31708] [blog.views:135] [views:do_reg] [ERROR]- '[password'
+2015-09-01 19:07:52,408 [Thread-22:33208] [blog.views:135] [views:do_reg] [ERROR]- '[password'
+2015-09-01 19:09:11,087 [Thread-2:28952] [blog.views:136] [views:do_reg] [ERROR]- '[password'
+2015-09-01 19:10:02,609 [Thread-4:32900] [blog.views:136] [views:do_reg] [ERROR]- Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2015-09-01 19:14:47,964 [Thread-2:32592] [blog.views:138] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian' for key 'username'")
+2015-09-01 19:15:23,339 [Thread-2:25768] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian' for key 'username'")
+2015-09-01 19:15:26,508 [Thread-4:30936] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian' for key 'username'")
+2015-09-01 19:22:37,867 [Thread-2:34264] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian' for key 'username'")
+2015-09-01 19:24:31,504 [Thread-23:33120] [blog.views:139] [views:do_reg] [ERROR]- 'User' object has no attribute 'backend'
+2015-09-01 19:25:55,823 [Thread-44:34788] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian' for key 'username'")
+2015-09-01 19:26:52,639 [Thread-67:31432] [blog.views:139] [views:do_reg] [ERROR]- 'User' object has no attribute 'backend'
+2015-09-01 19:27:06,298 [Thread-69:32480] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian2' for key 'username'")
+2015-09-01 19:27:10,114 [Thread-71:30136] [blog.views:139] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian2' for key 'username'")
+2015-09-01 19:30:10,669 [Thread-86:34052] [blog.views:139] [views:do_reg] [ERROR]- 'User' object has no attribute 'backend'
+2015-09-01 19:33:47,217 [Thread-2:34468] [blog.views:138] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian5' for key 'username'")
+2015-09-01 19:34:42,442 [Thread-4:34808] [blog.views:135] [views:do_reg] [ERROR]- (1062, "Duplicate entry 'Ljian5' for key 'username'")
+2015-09-01 20:02:40,961 [Thread-4:26244] [blog.views:161] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:03:32,371 [Thread-8:31896] [blog.views:161] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:05:02,636 [Thread-4:35476] [blog.views:163] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:06:25,147 [Thread-4:35572] [blog.views:163] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:09:30,356 [Thread-4:35328] [blog.views:164] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:10:26,688 [Thread-4:35580] [blog.views:164] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:11:24,203 [Thread-2:34928] [blog.views:165] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-01 20:12:48,043 [Thread-2:35600] [blog.views:166] [views:do_login] [ERROR]- 'LoginForm' object has no attribute 'cleaned_data'
+2015-09-02 00:14:14,392 [Thread-30:45728] [blog.views:100] [views:article] [ERROR]- invalid literal for int() with base 10: ''
+2015-09-02 01:26:09,665 [Thread-2:48744] [blog.views:219] [views:tag] [ERROR]- 'ManyRelatedManager' object is not subscriptable
+2015-09-02 01:27:00,416 [Thread-18:48136] [blog.views:219] [views:tag] [ERROR]- 'ManyRelatedManager' object is not subscriptable
+2015-09-02 01:30:09,148 [Thread-22:48160] [blog.views:214] [views:tag] [ERROR]- Tag matching query does not exist.
+2015-09-02 01:30:16,403 [Thread-23:48136] [blog.views:214] [views:tag] [ERROR]- Tag matching query does not exist.
+2015-09-02 10:41:18,617 [Thread-36:10588] [blog.views:119] [views:category] [ERROR]- 'function' object has no attribute 'article_set'
+2015-09-02 10:41:22,420 [Thread-39:9468] [blog.views:119] [views:category] [ERROR]- 'function' object has no attribute 'article_set'
